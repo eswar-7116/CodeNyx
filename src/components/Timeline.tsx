@@ -5,27 +5,31 @@ const tabs = ["PRE-EVENT", "DAY ONE", "DAY TWO"];
 
 const timelineData: Record<string, { time: string, title: string, subtitle?: string, duration?: string }[]> = {
     "PRE-EVENT": [
-        { time: "MARCH 9", title: "Registrations Open", subtitle: "Portal unlocks. Assemble your cohort." },
+        { time: "MARCH 9", title: "Registrations Open", subtitle: "Portal unlocks. Apply now." },
         { time: "MARCH 15", title: "DSA Screening Round", subtitle: "Algorithmic filtering phase.", duration: "1.5H" },
-        { time: "MARCH 16", title: "Shortlisting / PPT Portal", subtitle: "Eligible teams present abstract wireframes." },
+        { time: "MARCH 16", title: "Shortlisting / PPT Portal", subtitle: "Eligible Members present abstract wireframes." },
         { time: "MARCH 21", title: "Payment Deadline", subtitle: "Operational fee processing." },
-        { time: "MARCH 24", title: "Final Cohort Selected", subtitle: "Clearance codes dispatched." },
+        { time: "MARCH 24", title: "Final Members Selected", subtitle: "Clearance codes dispatched." },
     ],
     "DAY ONE": [
-        { time: "10:00 AM", title: "Opening Ceremony", subtitle: "Strategic briefing and venue rules." },
-        { time: "10:00 AM", title: "Problem Discussion", duration: "3.0H", subtitle: "Architecture planning and logic mapping." },
-        { time: "1:00 PM", title: "Lunch Break", duration: "1.0H" },
-        { time: "2:00 PM", title: "Phase I: Core Logic Implementation", duration: "3.5H", subtitle: "Backend infrastructure and primary logic mapping." },
-        { time: "6:00 PM", title: "Phase II: Scalability Testing", duration: "2.5H", subtitle: "Stress testing and mentor evaluations." },
-        { time: "8:30 PM", title: "Dinner", duration: "1.5H" },
-        { time: "10:00 PM", title: "Overnight Intensive Coding", duration: "3.0H", subtitle: "Uninterrupted dev cycles. Mentors on standby." },
+        { time: "10:00 AM", title: "Opening Ceremony", subtitle: "Participant welcome and refreshments on arrival." },
+        { time: "10:00 AM – 1:00 PM", title: "Problem Statement Discussion", duration: "3H", subtitle: "Teams interact with mentors and understand problem statements." },
+        { time: "1:00 PM – 2:00 PM", title: "Lunch Break", duration: "1H", subtitle: "Lunch served for all participants." },
+        { time: "2:00 PM – 5:30 PM", title: "Implementation Phase", duration: "3.5H", subtitle: "Teams begin building their core solutions." },
+        { time: "5:30 PM – 6:00 PM", title: "Tea Break", duration: "0.5H", subtitle: "Short refreshment break." },
+        { time: "6:00 PM – 8:30 PM", title: "Continued Implementation", duration: "2.5H", subtitle: "Teams continue development and mentor discussions." },
+        { time: "8:30 PM – 10:00 PM", title: "Dinner Break", duration: "1.5H", subtitle: "Dinner served for all participants." },
+        { time: "10:00 PM – 1:00 AM", title: "Overnight Coding", duration: "3H", subtitle: "Teams continue building their projects overnight." },
+        { time: "1:00 AM – 3:00 AM", title: "Fun Activities / Ice-Breaking Session", duration: "2H", subtitle: "Optional networking and fun activities for participants." }
     ],
+
     "DAY TWO": [
-        { time: "4:00 AM", title: "Dawn Sprint", duration: "4.0H", subtitle: "Final feature integration. Pushing commits." },
-        { time: "8:00 AM", title: "Breakfast", duration: "1.5H" },
-        { time: "9:30 AM", title: "Phase III: UI/UX & Polish", duration: "1.5H", subtitle: "Frontend rendering and presentation tuning." },
-        { time: "11:00 AM", title: "Evaluation Matrix", duration: "2.0H", subtitle: "Judges review physical prototypes on floor." },
-        { time: "2:00 PM", title: "Award Dissemination + Closing", duration: "2.0H", subtitle: "Final verdicts. Grand prize allocation." },
+        { time: "4:00 AM – 8:00 AM", title: "Continued Implementation", duration: "4H", subtitle: "Teams finalize development and features." },
+        { time: "8:00 AM – 9:30 AM", title: "Breakfast", duration: "1.5H", subtitle: "Breakfast served for participants." },
+        { time: "9:30 AM – 11:00 AM", title: "Final Implementation & Buffer", duration: "1.5H", subtitle: "Last window for coding and final touches." },
+        { time: "11:00 AM – 1:00 PM", title: "Evaluation Round", duration: "2H", subtitle: "Judges evaluate all team projects." },
+        { time: "1:00 PM – 2:00 PM", title: "Lunch Break", duration: "1H", subtitle: "Lunch served for participants." },
+        { time: "2:00 PM – 4:00 PM", title: "Presentation & Closing Ceremony", duration: "2H", subtitle: "Final presentations followed by results and awards." }
     ]
 };
 

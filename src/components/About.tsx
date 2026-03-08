@@ -21,12 +21,13 @@ const About = () => {
     return (
         <section id="about" className="section-padding bg-bg-base relative">
 
-            {/* Very faint structural background light */}
+            {/* Background glow */}
             <div className="absolute top-[20%] right-[10%] w-[600px] h-[600px] bg-glow-card opacity-50 blur-[80px] -z-10 pointer-events-none" />
 
             <div className="max-w-[1200px] mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-[100px] lg:gap-[140px] items-center">
 
+                    {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -35,21 +36,31 @@ const About = () => {
                         className="flex-1 w-full"
                     >
                         <p className="font-mono text-[13px] text-accent-secondary font-bold uppercase tracking-[4px] mb-[32px]">
-                            Platform Overview
+                            Hackathon Overview
                         </p>
+
                         <h2 className="font-display font-black text-[clamp(44px,7vw,72px)] text-accent-primary tracking-[-0.04em] leading-[1.05] mb-[40px]">
                             What is CodeNyx?
                         </h2>
+
                         <p className="font-body text-[18px] text-[rgba(255,255,255,0.5)] leading-[1.8] mb-[48px]">
-                            CodeNyx is a flagship hackathon architected by GDG CVR On Campus. It serves as a crucible for intense innovation—beginning with a precise DSA screening round, followed by a 36-hour offline sprint where exceptional teams construct solutions to complex, real-world problems.
+                            CodeNyx is the flagship hackathon organized by GDG CVR On Campus at
+                            CVR College of Engineering. The journey begins with an online DSA
+                            screening round where participants demonstrate their problem-solving
+                            skills. Shortlisted candidates proceed to the PPT submission stage
+                            where they present their ideas. Selected participants are then grouped
+                            into teams and invited to the 36-hour offline hackathon held on
+                            March 28–29, where they collaborate, build innovative solutions,
+                            and present their projects to mentors and judges.
                         </p>
 
+                        {/* Feature Points */}
                         <div className="flex flex-col gap-5 border-l-[2px] border-accent-secondary/30 pl-6 py-2">
                             {[
-                                "Architect scalable solutions to immediate problems",
-                                "Forge highly cross-functional developer teams",
-                                "Extract insights from elite industry mentors",
-                                "Demonstrate technical proficiency to judges"
+                                "Clear the online DSA screening round",
+                                "Submit innovative ideas during the PPT stage",
+                                "Collaborate in randomly formed teams during the hackathon",
+                                "Build and present real-world solutions to mentors and judges"
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-[16px]">
                                     <span className="font-mono text-[11px] text-accent-secondary font-bold opacity-60">
@@ -63,9 +74,10 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* Visual Anchor: Complex Data Montange Layout */}
+                    {/* Right Visual Section */}
                     <div className="flex-1 w-full grid grid-cols-2 gap-[16px] xl:gap-[24px]">
-                        {/* Large Mockup Element */}
+
+                        {/* Visual Mock Dashboard */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -73,17 +85,20 @@ const About = () => {
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 }}
                             className="col-span-2 aspect-[2/1] bg-[#0A0A0B] border border-white/10 rounded-[12px] relative overflow-hidden flex flex-col pt-[16px]"
                         >
-                            {/* Simulated UI "Window" Header */}
+                            {/* Window Header */}
                             <div className="flex items-center px-[20px] pb-[16px] border-b border-white/[0.04]">
                                 <div className="flex gap-[6px]">
                                     <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
                                     <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
                                     <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
                                 </div>
-                                <div className="mx-auto font-mono text-[10px] text-white/20 tracking-[2px]">SYS.CORE_DASHBOARD</div>
+
+                                <div className="mx-auto font-mono text-[10px] text-white/20 tracking-[2px]">
+                                    CODENYX_EVENT_FLOW
+                                </div>
                             </div>
 
-                            {/* Abstract Data Representation */}
+                            {/* Abstract Chart */}
                             <div className="flex-1 flex items-end px-[24px] pb-[24px] gap-[8px]">
                                 <div className="w-[10%] h-[30%] bg-accent-primary/5 rounded-t-[2px]" />
                                 <div className="w-[10%] h-[50%] bg-accent-primary/10 rounded-t-[2px]" />
@@ -98,8 +113,12 @@ const About = () => {
                             </div>
                         </motion.div>
 
-                        <StatsCard title="Duration" metric="36 Hrs" delay={0.2} />
-                        <StatsCard title="Screening" metric="DSA." delay={0.3} />
+                        {/* Stats */}
+                        <StatsCard title="Hackathon Duration" metric="36 Hrs" delay={0.2} />
+                        <StatsCard title="Hackathon Dates" metric="Mar 28–29" delay={0.3} />
+                        <StatsCard title="Initial Screening" metric="DSA Round" delay={0.4} />
+                        <StatsCard title="Event Format" metric="Offline @ CVR" delay={0.5} />
+
                     </div>
 
                 </div>
