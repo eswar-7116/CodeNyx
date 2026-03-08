@@ -89,7 +89,7 @@ const About = () => {
                                 <div className="w-[10%] h-[50%] bg-accent-primary/10 rounded-t-[2px]" />
                                 <div className="w-[10%] h-[40%] bg-accent-primary/10 rounded-t-[2px]" />
                                 <div className="w-[10%] h-[80%] bg-accent-secondary/40 rounded-t-[2px] relative">
-                                    <div className="absolute -top-[12px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-secondary shadow-[0_0_10px_#FF4400]" />
+                                    <div className="absolute -top-[12px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-secondary shadow-[0_0_10px_#FFFF00]" />
                                 </div>
                                 <div className="w-[10%] h-[60%] bg-accent-primary/10 rounded-t-[2px]" />
                                 <div className="w-[10%] h-[95%] bg-accent-primary/20 rounded-t-[2px]" />

@@ -28,7 +28,7 @@ const GeometricCore = () => (
             transition={{ duration: 60, ease: "linear", repeat: Infinity }}
             className="absolute w-[60%] h-[60%] rounded-full border-[1px] border-accent-secondary/20 flex items-center justify-center"
         >
-            <div className="absolute top-[-4px] left-[50%] w-2 h-2 rounded-full bg-accent-secondary shadow-[0_0_10px_#FF4400]" />
+            <div className="absolute top-[-4px] left-[50%] w-2 h-2 rounded-full bg-accent-secondary shadow-[0_0_10px_#FFFF00]" />
             <div className="absolute bottom-[-4px] right-[20%] w-1.5 h-1.5 rounded-full bg-accent-primary shadow-[0_0_10px_#FFFFFF]" />
         </motion.div>
 

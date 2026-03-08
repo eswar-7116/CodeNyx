@@ -10,7 +10,7 @@ export default {
         // High-end SaaS Dark Mode (Stark, aggressive elegance)
         // Shying completely away from standard purples, blues, or soft earth tones
         'accent-primary': '#FFFFFF', // Pure OLED white for absolute contrast
-        'accent-secondary': '#FF4400', // Electric Vermillion (Intense, technical, SaaS-favorite)
+        'accent-secondary': '#FFFF00', // Pac-Man Yellow
         'accent-tertiary': '#888888', // Technical neutral gray
         'accent-gold': '#F2C94C', // Refined non-yellow gold
         'bg-base': '#000000', // Pure absolute black 
@@ -23,7 +23,7 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       backgroundImage: {
-        'glow-hero': 'radial-gradient(circle at 50% 50%, rgba(255, 68, 0, 0.1) 0%, transparent 65%)',
+        'glow-hero': 'radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.1) 0%, transparent 65%)',
         'glow-card': 'radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 70%)',
       }
     },

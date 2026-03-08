@@ -90,7 +90,7 @@ const Highlights = () => {
                                 <line x1="50" y1="10" x2="50" y2="90" />
                                 <line x1="10" y1="50" x2="90" y2="50" />
                                 <circle cx="50" cy="10" r="2" fill="#FFFFFF" />
-                                <circle cx="90" cy="50" r="2" fill="#FF4400" />
+                                <circle cx="90" cy="50" r="2" fill="#FFFF00" />
                             </svg>
                         </div>
 

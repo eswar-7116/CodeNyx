@@ -4,23 +4,38 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
     {
-        question: "What exactly is CodeNyx?",
-        answer: "CodeNyx is a flagship 36-hour offline hackathon architected by GDG CVR On Campus. It begins with a rigorous DSA screening to distill the applicant pool, followed by an intensive operational phase where elite teams construct robust physical and digital prototypes."
+        question: "What is CodeNyx?",
+        answer: "CodeNyx is a 36-hour offline hackathon organized by GDG CVR On Campus where participants build innovative solutions to real-world problems, collaborate with fellow developers, and present their ideas to industry mentors and judges."
     },
     {
-        question: "Who is authorized to enter?",
-        answer: "Enrollment is unrestricted for active university undergraduates who possess the technical proficiency to clear the preliminary algorithmic screening. You must form a functional cohort of 3-4 developers prior to entry."
+        question: "Who can participate?",
+        answer: "Any undergraduate student from a recognized college or university can participate. All participants must register individually through the official website."
     },
     {
-        question: "What is the financial requirement?",
-        answer: "The initial DSA screening protocol is entirely free of charge. Cohorts that successfully clear the primary filter will be instructed to provide a nominal operational fee to secure their physical deployment zone."
+        question: "Can I participate individually?",
+        answer: "Yes. Participants must register individually for the initial screening and PPT round. Teams will be formed randomly by the organizers after the shortlisting process."
     },
     {
-        question: "Are individual deployments permitted?",
-        answer: "Negative. The hackathon is strictly a collaborative exercise mimicking real-world engineering environments. Cohort assembly is mandatory before initializing registration."
+        question: "How are teams formed?",
+        answer: "After the PPT round and shortlisting process, the organizers will randomly form teams to ensure diverse skill sets and encourage collaboration among participants."
+    },
+    {
+        question: "Is there a registration fee?",
+        answer: "The initial DSA screening round is free for all participants. Shortlisted participants who advance to the final offline hackathon may be required to pay a nominal participation fee."
+    },
+    {
+        question: "What is the selection process?",
+        answer: "Participants first register individually and complete the online DSA screening round. Shortlisted candidates then submit a PPT based on the problem statements. Final participants are selected and grouped into teams for the offline hackathon."
+    },
+    {
+        question: "Do I need prior hackathon experience?",
+        answer: "No prior hackathon experience is required. Anyone interested in building projects, learning new technologies, and solving problems is encouraged to participate."
+    },
+    {
+        question: "What should participants bring?",
+        answer: "Participants should bring their laptops, chargers, and any hardware or tools required for building their project during the hackathon."
     }
 ];
-
 const FAQItem = ({ faq, isOpen, toggleOpen, index }: { faq: any, isOpen: boolean, toggleOpen: () => void, index: number }) => {
     return (
         <div className="relative border-b border-accent-secondary/10 py-[40px] group overflow-hidden">
