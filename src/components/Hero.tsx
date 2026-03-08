@@ -140,7 +140,7 @@ const Hero = () => {
                         Register Now
                     </button>
                     <a href="#highlights" className="btn-ghost w-full sm:w-auto">
-                        View Experience
+                        View Highlights
                     </a>
                 </motion.div>
 
