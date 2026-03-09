@@ -47,7 +47,6 @@ const Highlights = () => {
                             <div className="absolute top-[50%] left-0 w-[50%] h-[2px] bg-accent-secondary/80 origin-right rotate-[30deg]" />
                             <div className="font-display text-[80px] md:text-[120px] font-black leading-none text-accent-primary/30 z-10 mr-4">36</div>
                         </div>
-                        <div className="absolute top-[10px] right-[20px] font-display text-[140px] font-black leading-none text-white/[0.07] pointer-events-none select-none">36</div>
 
                         <div className="relative z-10 w-full md:w-[60%]">
                             <div className="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mb-8 border border-white/5">
