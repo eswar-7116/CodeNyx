@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const tabs = ["PRE-EVENT", "DAY ONE", "DAY TWO"];
 
-const timelineData: Record<string, { time: string, title: string, subtitle?: string, duration?: string }[]> = {
+const timelineData: Record<string, { time: string, title: string, subtitle?: string, duration?: string, dateNote?: string }[]> = {
     "PRE-EVENT": [
         { time: "MAR 10 – 17", title: "Registrations Open", subtitle: "Portal unlocks. Apply now." },
-        { time: "MARCH 17", title: "DSA Screening Round", subtitle: "Algorithmic filtering phase.", duration: "2H" },
+        { time: "MARCH 17", title: "DSA Screening Round", subtitle: "Algorithmic filtering phase. (Coding rounds differ for CVR and BVRIT. Exact dates will be informed in their college)", duration: "2H", dateNote: "CVR: 12TH" },
         { time: "MAR 18 – 22", title: "Idea Presentation", subtitle: "Eligible Members present abstract wireframes." },
         { time: "MARCH 23", title: "Payment Deadline", subtitle: "Operational fee processing." },
         { time: "MAR 28 – 29", title: "Final Hackathon", subtitle: "The ultimate 36-hour offline building sprint." },
@@ -101,6 +101,11 @@ const Timeline = () => {
                                         <span className="font-mono text-[16px] xl:text-[18px] font-bold text-accent-secondary tracking-[2px] inline-block mb-2">
                                             {item.time}
                                         </span>
+                                        {item.dateNote && (
+                                            <span className="block font-mono text-[12px] text-red-500/90 font-bold tracking-[1px] mb-2">
+                                                ( {item.dateNote} )
+                                            </span>
+                                        )}
                                         {item.duration && (
                                             <span className="block font-mono text-[12px] text-accent-primary/30 uppercase tracking-[3px]">
                                                 RUN: {item.duration}
