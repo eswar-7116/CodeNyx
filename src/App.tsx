@@ -12,6 +12,7 @@ import PacmanCodenyx from './components/pacman/PacmanCodenyx';
 import Footer from './components/Footer';
 import useSmoothScroll from './hooks/useSmoothScroll';
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
   useSmoothScroll();
@@ -32,6 +33,7 @@ function App() {
       </main>
       <Footer />
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
