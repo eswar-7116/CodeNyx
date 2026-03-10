@@ -5,11 +5,11 @@ const tabs = ["PRE-EVENT", "DAY ONE", "DAY TWO"];
 
 const timelineData: Record<string, { time: string, title: string, subtitle?: string, duration?: string }[]> = {
     "PRE-EVENT": [
-        { time: "MARCH 9", title: "Registrations Open", subtitle: "Portal unlocks. Apply now." },
-        { time: "MARCH 15", title: "DSA Screening Round", subtitle: "Algorithmic filtering phase.", duration: "1.5H" },
-        { time: "MARCH 16", title: "Shortlisting / PPT Portal", subtitle: "Eligible Members present abstract wireframes." },
-        { time: "MARCH 21", title: "Payment Deadline", subtitle: "Operational fee processing." },
-        { time: "MARCH 24", title: "Final Members Selected", subtitle: "Clearance codes dispatched." },
+        { time: "MAR 10 – 17", title: "Registrations Open", subtitle: "Portal unlocks. Apply now." },
+        { time: "MARCH 17", title: "DSA Screening Round", subtitle: "Algorithmic filtering phase.", duration: "2H" },
+        { time: "MAR 18 – 22", title: "Idea Presentation", subtitle: "Eligible Members present abstract wireframes." },
+        { time: "MARCH 23", title: "Payment Deadline", subtitle: "Operational fee processing." },
+        { time: "MAR 28 – 29", title: "Final Hackathon", subtitle: "The ultimate 36-hour offline building sprint." },
     ],
     "DAY ONE": [
         { time: "10:00 AM", title: "Opening Ceremony", subtitle: "Participant welcome and refreshments on arrival." },
