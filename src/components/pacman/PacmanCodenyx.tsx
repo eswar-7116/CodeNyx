@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./PacmanCodenyx.css";
 
-
 interface Sizes {
   scale: number;
   pacSize: number;
@@ -48,19 +47,17 @@ interface GhostObj {
   frame: number;
   pupilL: SVGCircleElement | null;
   pupilR: SVGCircleElement | null;
-  eyePhase: number;  // per-ghost oscillation offset
-  eyeSpeed: number;  // per-ghost oscillation speed
+  eyePhase: number; // per-ghost oscillation offset
+  eyeSpeed: number; // per-ghost oscillation speed
 }
 
 type Phase = "idle" | "eating" | "ghosts" | "done";
 
-export interface PacmanCodenyxProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface PacmanCodenyxProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
 }
-
 
 const WORD = "CODENYX";
 const GHOST_COLORS = [
@@ -73,7 +70,6 @@ const GHOST_COLORS = [
   "#00FFFF",
 ];
 const DOT_DELAY = 70;
-
 
 function getScale(stageWidth: number): number {
   return Math.max(0.38, Math.min(1, stageWidth / 700));
@@ -175,7 +171,7 @@ function spawnBlast(
   stageEl: HTMLDivElement,
   x: number,
   y: number,
-  scale: number
+  scale: number,
 ): void {
   const count = 8;
   for (let i = 0; i < count; i++) {
@@ -207,7 +203,6 @@ function spawnBlast(
   stageEl.appendChild(ring);
   setTimeout(() => ring.remove(), 400);
 }
-
 
 export default function PacmanCodenyx({
   id,
@@ -247,7 +242,16 @@ export default function PacmanCodenyx({
       ghosts = [];
 
       sizes = getSizes(stageEl.offsetWidth);
-      const { pacSize, pacStart, letterStart, letterW, letterElW, fontSize, dotSize, ghostSize } = sizes;
+      const {
+        pacSize,
+        pacStart,
+        letterStart,
+        letterW,
+        letterElW,
+        fontSize,
+        dotSize,
+        ghostSize,
+      } = sizes;
 
       pacX = pacStart;
 
@@ -331,12 +335,13 @@ export default function PacmanCodenyx({
     }
 
     function tickEating(): void {
-      const { pacSpeedEmpty, pacSpeedDot, pacSpeedLetter, pacSize, letterElW } = sizes!;
+      const { pacSpeedEmpty, pacSpeedDot, pacSpeedLetter, pacSize, letterElW } =
+        sizes!;
       const mouth = pacX + pacSize * 0.5;
 
       const inZone = isInLetterZone(mouth);
       const dotsAhead = dots.some(
-        (d) => !d.eaten && d.x > mouth && d.x < mouth + pacSize * 3
+        (d) => !d.eaten && d.x > mouth && d.x < mouth + pacSize * 3,
       );
       const speed = inZone
         ? pacSpeedLetter
@@ -390,13 +395,11 @@ export default function PacmanCodenyx({
         const target = letters[g.letterIdx].x;
         const progress = Math.max(
           0,
-          1 - (g.x - target) / (stageEl.offsetWidth * 0.6)
+          1 - (g.x - target) / (stageEl.offsetWidth * 0.6),
         );
         const dampen = 1 - Math.min(1, progress * 1.4);
         const bounceY =
-          Math.sin(g.frame * g.jumpFreq + g.jumpPhase) *
-          g.jumpHeight *
-          dampen;
+          Math.sin(g.frame * g.jumpFreq + g.jumpPhase) * g.jumpHeight * dampen;
         const velY = Math.cos(g.frame * g.jumpFreq + g.jumpPhase);
         const scaleX = 1 + velY * g.squishAmt * dampen * 0.5;
         const scaleY = 1 - velY * g.squishAmt * dampen * 0.5;
@@ -506,13 +509,19 @@ export default function PacmanCodenyx({
         .filter(Boolean)
         .join(" ")}
       style={style}
+      role="img"
+      aria-label="Interactive Pac-Man animation spelling CodeNyx"
       {...rest}
     >
       {/* scanline — CSS only */}
-      <div className="pacman-scanline" />
+      <div className="pacman-scanline" aria-hidden="true" />
 
       {/* stage */}
-      <div className="stage relative w-full" ref={stageRef} />
+      <div
+        className="stage relative w-full"
+        ref={stageRef}
+        aria-hidden="true"
+      />
     </div>
   );
 }

@@ -1,130 +1,167 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-const StatsCard = ({ title, metric, delay }: { title: string, metric: string, delay: number }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const }}
-        className="bg-[#0e0e0e] border border-white/5 p-[24px] rounded-[8px] flex flex-col justify-between"
-    >
-        <div className="w-2 h-2 rounded-full bg-accent-secondary mb-[16px]" />
-        <h4 className="font-mono text-[12px] text-accent-primary/40 uppercase tracking-[2px]">{title}</h4>
-        <p className="font-display font-bold text-[36px] text-accent-primary leading-none mt-[8px]">
-            {metric}
-        </p>
-    </motion.div>
+const StatsCard = ({
+  title,
+  metric,
+  delay,
+}: {
+  title: string;
+  metric: string;
+  delay: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const }}
+    className="bg-[#0e0e0e] border border-white/5 p-[24px] rounded-[8px] flex flex-col justify-between"
+    role="article"
+    aria-label={`${title}: ${metric}`}
+  >
+    <div
+      className="w-2 h-2 rounded-full bg-accent-secondary mb-[16px]"
+      aria-hidden="true"
+    />
+    <h4 className="font-mono text-[12px] text-accent-primary/40 uppercase tracking-[2px]">
+      {title}
+    </h4>
+    <p className="font-display font-bold text-[36px] text-accent-primary leading-none mt-[8px]">
+      {metric}
+    </p>
+  </motion.div>
 );
 
 const About = () => {
-    return (
-        <section id="about" className="section-padding bg-bg-base relative">
+  return (
+    <section
+      id="about"
+      className="section-padding bg-bg-base relative"
+      aria-labelledby="about-title"
+    >
+      {/* Background glow */}
+      <div
+        className="absolute top-[20%] right-[10%] w-[600px] h-[600px] bg-glow-card opacity-50 blur-[80px] -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
 
-            {/* Background glow */}
-            <div className="absolute top-[20%] right-[10%] w-[600px] h-[600px] bg-glow-card opacity-50 blur-[80px] -z-10 pointer-events-none" />
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-[100px] lg:gap-[140px] items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+            className="flex-1 w-full"
+          >
+            <p className="font-mono text-[13px] text-accent-secondary font-bold uppercase tracking-[4px] mb-[32px]">
+              Hackathon Overview
+            </p>
 
-            <div className="max-w-[1200px] mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-[100px] lg:gap-[140px] items-center">
+            <h2
+              id="about-title"
+              className="font-display font-black text-[clamp(44px,7vw,72px)] text-accent-primary tracking-[-0.04em] leading-[1.05] mb-[40px]"
+            >
+              What is CodeNyx?
+            </h2>
 
-                    {/* Left Content */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-                        className="flex-1 w-full"
-                    >
-                        <p className="font-mono text-[13px] text-accent-secondary font-bold uppercase tracking-[4px] mb-[32px]">
-                            Hackathon Overview
-                        </p>
+            <p className="font-body text-[18px] text-[rgba(255,255,255,0.5)] leading-[1.8] mb-[48px]">
+              CodeNyx is the flagship hackathon organized by GDG on Campus CVR
+              College of Engineering at CVR College of Engineering. The journey
+              begins with an online DSA screening round where participants
+              demonstrate their problem-solving skills. Shortlisted candidates
+              proceed to the PPT submission stage where they present their
+              ideas. Selected participants are then grouped into teams and
+              invited to the 36-hour offline hackathon held on March 28–29,
+              where they collaborate, build innovative solutions, and present
+              their projects to mentors and judges.
+            </p>
 
-                        <h2 className="font-display font-black text-[clamp(44px,7vw,72px)] text-accent-primary tracking-[-0.04em] leading-[1.05] mb-[40px]">
-                            What is CodeNyx?
-                        </h2>
+            {/* Feature Points */}
+            <ul className="flex flex-col gap-5 border-l-[2px] border-accent-secondary/30 pl-6 py-2">
+              {[
+                "Clear the online DSA screening round",
+                "Submit innovative ideas during the PPT stage",
+                "Collaborate in randomly formed teams during the hackathon",
+                "Build and present real-world solutions to mentors and judges",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-center gap-[16px]">
+                  <span
+                    className="font-mono text-[11px] text-accent-secondary font-bold opacity-60"
+                    aria-hidden="true"
+                  >
+                    {`[0${idx + 1}]`}
+                  </span>
+                  <span className="font-body text-[16px] text-[rgba(255,255,255,0.7)] font-medium tracking-tight">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-                        <p className="font-body text-[18px] text-[rgba(255,255,255,0.5)] leading-[1.8] mb-[48px]">
-                            CodeNyx is the flagship hackathon organized by GDG on Campus CVR College of Engineering at
-                            CVR College of Engineering. The journey begins with an online DSA
-                            screening round where participants demonstrate their problem-solving
-                            skills. Shortlisted candidates proceed to the PPT submission stage
-                            where they present their ideas. Selected participants are then grouped
-                            into teams and invited to the 36-hour offline hackathon held on
-                            March 28–29, where they collaborate, build innovative solutions,
-                            and present their projects to mentors and judges.
-                        </p>
-
-                        {/* Feature Points */}
-                        <div className="flex flex-col gap-5 border-l-[2px] border-accent-secondary/30 pl-6 py-2">
-                            {[
-                                "Clear the online DSA screening round",
-                                "Submit innovative ideas during the PPT stage",
-                                "Collaborate in randomly formed teams during the hackathon",
-                                "Build and present real-world solutions to mentors and judges"
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex items-center gap-[16px]">
-                                    <span className="font-mono text-[11px] text-accent-secondary font-bold opacity-60">
-                                        {`[0${idx + 1}]`}
-                                    </span>
-                                    <span className="font-body text-[16px] text-[rgba(255,255,255,0.7)] font-medium tracking-tight">
-                                        {item}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Right Visual Section */}
-                    <div className="flex-1 w-full grid grid-cols-2 gap-[16px] xl:gap-[24px]">
-
-                        {/* Visual Mock Dashboard */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 }}
-                            className="col-span-2 aspect-[2/1] bg-[#0A0A0B] border border-white/10 rounded-[12px] relative overflow-hidden flex flex-col pt-[16px]"
-                        >
-                            {/* Window Header */}
-                            <div className="flex items-center px-[20px] pb-[16px] border-b border-white/[0.04]">
-                                <div className="flex gap-[6px]">
-                                    <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
-                                    <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
-                                    <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
-                                </div>
-
-                                <div className="mx-auto font-mono text-[10px] text-white/20 tracking-[2px]">
-                                    CODENYX_EVENT_FLOW
-                                </div>
-                            </div>
-
-                            {/* Abstract Chart */}
-                            <div className="flex-1 flex items-end px-[24px] pb-[24px] gap-[8px]">
-                                <div className="w-[10%] h-[30%] bg-accent-primary/5 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[50%] bg-accent-primary/10 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[40%] bg-accent-primary/10 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[80%] bg-accent-secondary/40 rounded-t-[2px] relative">
-                                    <div className="absolute -top-[12px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-secondary shadow-[0_0_10px_#FF0000]" />
-                                </div>
-                                <div className="w-[10%] h-[60%] bg-accent-primary/10 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[95%] bg-accent-primary/20 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[75%] bg-accent-primary/20 rounded-t-[2px]" />
-                                <div className="w-[10%] h-[65%] bg-accent-primary/10 rounded-t-[2px]" />
-                            </div>
-                        </motion.div>
-
-                        {/* Stats */}
-                        <StatsCard title="Hackathon Duration" metric="36 Hrs" delay={0.2} />
-                        <StatsCard title="Hackathon Dates" metric="Mar 28–29" delay={0.3} />
-                        <StatsCard title="Initial Screening" metric="DSA Round" delay={0.4} />
-                        <StatsCard title="Event Format" metric="Offline @ CVR" delay={0.5} />
-
-                    </div>
-
+          {/* Right Visual Section */}
+          <div className="flex-1 w-full grid grid-cols-2 gap-[16px] xl:gap-[24px]">
+            {/* Visual Mock Dashboard */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1] as const,
+                delay: 0.1,
+              }}
+              className="col-span-2 aspect-[2/1] bg-[#0A0A0B] border border-white/10 rounded-[12px] relative overflow-hidden flex flex-col pt-[16px]"
+              aria-hidden="true"
+            >
+              {/* Window Header */}
+              <div className="flex items-center px-[20px] pb-[16px] border-b border-white/[0.04]">
+                <div className="flex gap-[6px]">
+                  <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
+                  <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
+                  <div className="w-[10px] h-[10px] rounded-full bg-white/10" />
                 </div>
-            </div>
-        </section>
-    );
+
+                <div className="mx-auto font-mono text-[10px] text-white/20 tracking-[2px]">
+                  CODENYX_EVENT_FLOW
+                </div>
+              </div>
+
+              {/* Abstract Chart */}
+              <div className="flex-1 flex items-end px-[24px] pb-[24px] gap-[8px]">
+                <div className="w-[10%] h-[30%] bg-accent-primary/5 rounded-t-[2px]" />
+                <div className="w-[10%] h-[50%] bg-accent-primary/10 rounded-t-[2px]" />
+                <div className="w-[10%] h-[40%] bg-accent-primary/10 rounded-t-[2px]" />
+                <div className="w-[10%] h-[80%] bg-accent-secondary/40 rounded-t-[2px] relative">
+                  <div className="absolute -top-[12px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-secondary shadow-[0_0_10px_#FF0000]" />
+                </div>
+                <div className="w-[10%] h-[60%] bg-accent-primary/10 rounded-t-[2px]" />
+                <div className="w-[10%] h-[95%] bg-accent-primary/20 rounded-t-[2px]" />
+                <div className="w-[10%] h-[75%] bg-accent-primary/20 rounded-t-[2px]" />
+                <div className="w-[10%] h-[65%] bg-accent-primary/10 rounded-t-[2px]" />
+              </div>
+            </motion.div>
+
+            {/* Stats */}
+            <StatsCard title="Hackathon Duration" metric="36 Hrs" delay={0.2} />
+            <StatsCard title="Hackathon Dates" metric="Mar 28–29" delay={0.3} />
+            <StatsCard
+              title="Initial Screening"
+              metric="DSA Round"
+              delay={0.4}
+            />
+            <StatsCard
+              title="Event Format"
+              metric="Offline @ CVR"
+              delay={0.5}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About;

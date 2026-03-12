@@ -62,11 +62,13 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center pt-[140px] pb-[80px] overflow-hidden px-6"
+      aria-labelledby="hero-title"
     >
       {/* Background */}
       <div
         className="absolute inset-0 z-0"
         style={{ filter: "brightness(0.6) contrast(1.2)" }}
+        aria-hidden="true"
       >
         <ColorBends
           className=""
@@ -86,7 +88,10 @@ const Hero = () => {
       </div>
 
       {/* Bottom Gradient Fade to remove sudden line when scrolling down */}
-      <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-bg-base to-transparent z-[5] pointer-events-none" />
+      <div
+        className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-bg-base to-transparent z-[5] pointer-events-none"
+        aria-hidden="true"
+      />
 
       <motion.div
         variants={containerVariants}
@@ -115,6 +120,7 @@ const Hero = () => {
         {/* Main Title */}
         <motion.h1
           variants={itemVariants}
+          id="hero-title"
           className="font-display font-black text-[clamp(72px,16vw,180px)] tracking-[-0.05em] leading-[0.85] pb-4 text-gradient-primary w-full"
         >
           CodeNyx
@@ -137,10 +143,13 @@ const Hero = () => {
             A 36-hour innovation hackathon
           </h2>
 
-          <div className="flex items-center gap-3 font-display font-black text-[clamp(28px,4vw,44px)] tracking-[-0.03em] leading-[1.2] mt-1">
+          <div className="flex items-center gap-3 font-display font-black text-[clamp(28px,4vw,44px)] tracking-[-0.03em] leading-[1.1] mt-1">
             <span className="text-accent-primary/40">for</span>
 
-            <div className="relative inline-block overflow-hidden h-full min-w-[220px] text-left">
+            <div
+              className="relative inline-block overflow-hidden h-full min-w-[220px] text-left"
+              aria-live="polite"
+            >
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={wordIndex}
@@ -210,6 +219,7 @@ const Hero = () => {
         <motion.div
           variants={itemVariants}
           className="flex justify-center items-baseline gap-6 md:gap-12 select-none w-full border-t border-accent-secondary/10 pt-[60px]"
+          aria-label="Countdown to event"
         >
           {isPast ? (
             <div className="flex items-center gap-4 font-mono text-accent-secondary font-bold tracking-widest text-[16px]">

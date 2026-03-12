@@ -16,11 +16,16 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-bg-base/80 backdrop-blur-xl border-b border-white/[0.04]" : "bg-transparent"}`}
+      aria-label="Main Navigation"
     >
       <div className="max-w-[1200px] mx-auto px-6 h-[80px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center">
+          <a
+            href="#home"
+            className="flex items-center justify-center"
+            aria-label="CodeNyx Home"
+          >
             {/* Minimalist Logo */}
             <span className="font-display font-black text-[28px] text-accent-primary tracking-tight">
               C
@@ -28,7 +33,7 @@ const Navbar = () => {
             <span className="font-display font-black text-[32px] font-bold text-accent-secondary tracking-tight">
               .
             </span>
-          </div>
+          </a>
         </div>
 
         {/* Desktop Links */}
@@ -66,6 +71,9 @@ const Navbar = () => {
         <button
           className="md:hidden text-accent-primary/60 hover:text-accent-primary transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-haspopup="true"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -73,7 +81,10 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8">
+        <nav
+          className="md:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
+          aria-label="Mobile Navigation"
+        >
           {["Home", "Highlights", "Timeline", "FAQs"].map((link) => (
             <a
               key={link}
@@ -102,7 +113,7 @@ const Navbar = () => {
               Register
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </nav>
   );

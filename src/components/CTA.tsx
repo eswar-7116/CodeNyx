@@ -6,9 +6,13 @@ const CTA = () => {
     <section
       id="register"
       className="section-padding bg-bg-base relative overflow-hidden"
+      aria-labelledby="cta-title"
     >
       {/* Portal visual background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] max-w-[2000px] max-h-[2000px] pointer-events-none -z-10 flex items-center justify-center opacity-40 mix-blend-screen">
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] max-w-[2000px] max-h-[2000px] pointer-events-none -z-10 flex items-center justify-center opacity-40 mix-blend-screen"
+        aria-hidden="true"
+      >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -39,7 +43,10 @@ const CTA = () => {
           className="card-minimal flex flex-col items-center justify-center text-center py-[140px] px-6 relative overflow-hidden bg-black shadow-[0_40px_100px_rgba(0,0,0,0.8)] border-accent-primary/10"
         >
           {/* Glow */}
-          <div className="absolute top-[-50%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none opacity-[0.25] mix-blend-screen bg-glow-hero blur-[100px]" />
+          <div
+            className="absolute top-[-50%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none opacity-[0.25] mix-blend-screen bg-glow-hero blur-[100px]"
+            aria-hidden="true"
+          />
 
           <div className="relative z-10 w-full flex flex-col items-center max-w-[700px]">
             {/* Status badge */}
@@ -49,11 +56,13 @@ const CTA = () => {
                 REGISTRATIONS: DSA ROUND OPEN
               </span>
             </div>
-
-            <h2 className="font-display font-black text-[clamp(48px,8vw,100px)] tracking-[-0.04em] mb-[40px] leading-[0.95] text-accent-primary">
+            <h2
+              id="cta-title"
+              className="font-display font-black text-[clamp(48px,8vw,100px)] tracking-[-0.04em] mb-[40px] leading-[0.95] text-accent-primary"
+            >
               Enter The Arena.
             </h2>
-
+            Broadway
             <p className="font-body text-[20px] text-accent-primary/50 leading-[1.8] mb-[64px]">
               Begin your CodeNyx journey by registering for the DSA screening
               round. Participants will compete individually in an online
@@ -61,7 +70,6 @@ const CTA = () => {
               PPT submission stage and eventually the final 36-hour offline
               hackathon at CVR College of Engineering.
             </p>
-
             <div className="flex flex-col sm:flex-row w-full sm:w-auto justify-center items-center gap-[16px] mb-[64px]">
               <a
                 href="https://hackculture.io/hackathons/codenyx"
@@ -72,7 +80,6 @@ const CTA = () => {
                 Register for DSA Round
               </a>
             </div>
-
             <p className="font-mono text-[13px] text-accent-primary/30 tracking-[3px] uppercase">
               DSA Round: March 17, 2026 // 8:00 PM – 10:00 PM IST
             </p>
