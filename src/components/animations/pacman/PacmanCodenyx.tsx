@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import "./PacmanCodenyx.css";
 
@@ -53,7 +55,7 @@ interface GhostObj {
 
 type Phase = "idle" | "eating" | "ghosts" | "done";
 
-export interface PacmanCodenyxProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PacmanCodenyxProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -236,12 +238,12 @@ export default function PacmanCodenyx({
     function buildStage(): void {
       dotTimers.forEach((t) => clearTimeout(t));
       dotTimers = [];
-      stageEl.innerHTML = "";
+      stageEl!.innerHTML = "";
       letters = [];
       dots = [];
       ghosts = [];
 
-      sizes = getSizes(stageEl.offsetWidth);
+      sizes = getSizes(stageEl!.offsetWidth);
       const {
         pacSize,
         pacStart,
@@ -256,26 +258,26 @@ export default function PacmanCodenyx({
       pacX = pacStart;
 
       // CSS vars for pseudo-elements
-      stageEl.style.setProperty("--pac-size", pacSize + "px");
-      stageEl.style.setProperty("--ghost-size", ghostSize + "px");
-      stageEl.style.setProperty("--dot-size", dotSize + "px");
-      stageEl.style.setProperty("--letter-w", letterElW + "px");
-      stageEl.style.setProperty("--font-size", fontSize);
-      stageEl.style.height = pacSize + 38 + "px";
+      stageEl!.style.setProperty("--pac-size", pacSize + "px");
+      stageEl!.style.setProperty("--ghost-size", ghostSize + "px");
+      stageEl!.style.setProperty("--dot-size", dotSize + "px");
+      stageEl!.style.setProperty("--letter-w", letterElW + "px");
+      stageEl!.style.setProperty("--font-size", fontSize);
+      stageEl!.style.height = pacSize + 38 + "px";
 
       // Pacman
       pacEl = document.createElement("div");
       pacEl.id = "pacman";
       pacEl.innerHTML = '<div class="eye"></div>';
       pacEl.style.left = pacX + "px";
-      stageEl.appendChild(pacEl);
+      stageEl!.appendChild(pacEl);
 
       // Dots
       getDotPositions(sizes).forEach((dx, idx) => {
         const d = document.createElement("div");
         d.className = "dot";
         d.style.left = dx + "px";
-        stageEl.appendChild(d);
+        stageEl!.appendChild(d);
         const obj: DotObj = { el: d as HTMLDivElement, x: dx, eaten: false };
         dots.push(obj);
         const t = setTimeout(() => {
@@ -291,14 +293,14 @@ export default function PacmanCodenyx({
         el.textContent = ch;
         const lx = letterStart + i * letterW;
         el.style.left = lx + "px";
-        stageEl.appendChild(el);
+        stageEl!.appendChild(el);
         letters.push({ el: el as HTMLSpanElement, x: lx, eaten: false });
       });
     }
 
     function spawnGhosts(): void {
       const { ghostGap, ghostSize, scale } = sizes!;
-      const stageW = stageEl.offsetWidth;
+      const stageW = stageEl!.offsetWidth;
 
       ghosts = WORD.split("").map((_, i) => {
         const color = GHOST_COLORS[i];
@@ -308,7 +310,7 @@ export default function PacmanCodenyx({
         el.className = "ghost";
         el.style.left = startX + "px";
         el.innerHTML = ghostSVG(color);
-        stageEl.appendChild(el);
+        stageEl!.appendChild(el);
 
         return {
           el: el as HTMLDivElement,
@@ -370,11 +372,11 @@ export default function PacmanCodenyx({
           l.el.classList.add("eaten");
           const lCenterX = l.x + letterElW / 2;
           const stageMid = (sizes!.pacSize + 38) / 2;
-          spawnBlast(stageEl, lCenterX, stageMid, sizes!.scale);
+          spawnBlast(stageEl!, lCenterX, stageMid, sizes!.scale);
         }
       });
 
-      if (letters.every((l) => l.eaten) && pacX > stageEl.offsetWidth + 40) {
+      if (letters.every((l) => l.eaten) && pacX > stageEl!.offsetWidth + 40) {
         phase = "ghosts";
         spawnGhosts();
       }
@@ -395,7 +397,7 @@ export default function PacmanCodenyx({
         const target = letters[g.letterIdx].x;
         const progress = Math.max(
           0,
-          1 - (g.x - target) / (stageEl.offsetWidth * 0.6),
+          1 - (g.x - target) / (stageEl!.offsetWidth * 0.6),
         );
         const dampen = 1 - Math.min(1, progress * 1.4);
         const bounceY =
@@ -442,7 +444,7 @@ export default function PacmanCodenyx({
         cancelAnimationFrame(raf!);
         raf = null;
         setTimeout(() => {
-          stageEl.style.opacity = "0";
+          stageEl!.style.opacity = "0";
           setTimeout(() => init(), 380);
         }, 600);
       }
@@ -454,15 +456,15 @@ export default function PacmanCodenyx({
         raf = null;
       }
 
-      stageEl.style.transition = "none";
-      stageEl.style.opacity = "0";
+      stageEl!.style.transition = "none";
+      stageEl!.style.opacity = "0";
 
       buildStage();
       phase = "idle";
 
-      void stageEl.offsetHeight;
-      stageEl.style.transition = "opacity 0.35s ease";
-      stageEl.style.opacity = "1";
+      void stageEl!.offsetHeight;
+      stageEl!.style.transition = "opacity 0.35s ease";
+      stageEl!.style.opacity = "1";
 
       const dotCount = getDotPositions(sizes!).length;
       const launchDelay = Math.min(dotCount * DOT_DELAY * 0.5, 800);

@@ -1,7 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import waIcon from "../assets/wa.svg";
-import discordIcon from "../assets/discord.svg";
+"use client";
+
+import { motion } from "framer-motion"
+import Image from "next/image";
+import waIcon from "@/assets/wa.svg";
+import discordIcon from "@/assets/discord.svg";
 import { Users } from "lucide-react";
 
 const Community = () => {
@@ -109,14 +111,26 @@ const Community = () => {
               className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-90 transition-opacity"
               aria-hidden="true"
             >
-              <img src={waIcon} alt="" className="w-20 h-20" />
+              <Image
+                src={waIcon}
+                alt=""
+                className="w-20 h-20"
+                width={80}
+                height={80}
+              />
             </div>
             <div className="relative z-10 flex flex-col items-center text-center">
               <div
                 className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center text-[#25D366] mb-6 group-hover:scale-110 transition-transform duration-500"
                 aria-hidden="true"
               >
-                <img src={waIcon} alt="WhatsApp" className="w-8 h-8" />
+                <Image
+                  src={waIcon}
+                  alt="WhatsApp"
+                  className="w-8 h-8"
+                  width={32}
+                  height={32}
+                />
               </div>
               <h3 className="font-display font-bold text-2xl mb-2">
                 WhatsApp Group
@@ -142,14 +156,26 @@ const Community = () => {
               className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-90 transition-opacity"
               aria-hidden="true"
             >
-              <img src={discordIcon} alt="" className="w-20 h-20" />
+              <Image
+                src={discordIcon}
+                alt=""
+                className="w-20 h-20"
+                width={80}
+                height={80}
+              />
             </div>
             <div className="relative z-10 flex flex-col items-center text-center">
               <div
                 className="w-16 h-16 rounded-full bg-[#5865F2] flex items-center justify-center text-[#5865F2] mb-6 group-hover:scale-110 transition-transform duration-500"
                 aria-hidden="true"
               >
-                <img src={discordIcon} alt="Discord" className="w-8 h-8" />
+                <Image
+                  src={discordIcon}
+                  alt="Discord"
+                  className="w-8 h-8"
+                  width={32}
+                  height={32}
+                />
               </div>
               <h3 className="font-display font-bold text-2xl mb-2">
                 Discord Server

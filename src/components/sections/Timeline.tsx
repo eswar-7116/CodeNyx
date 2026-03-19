@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const tabs = ["PRE-EVENT", "DAY ONE", "DAY TWO"];

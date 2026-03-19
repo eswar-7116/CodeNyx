@@ -1,14 +1,15 @@
-import React from "react";
+"use client";
+
 import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = 2026;
 
   const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "Highlights", href: "#highlights" },
-    { label: "Timeline", href: "#timeline" },
-    { label: "FAQs", href: "#faqs" },
+    { label: "Home", href: "/#home" },
+    { label: "Highlights", href: "/#highlights" },
+    { label: "Timeline", href: "/#timeline" },
+    { label: "FAQs", href: "/#faqs" },
   ];
 
   const socialLinks = [
@@ -138,7 +139,7 @@ const Footer = () => {
                 className="flex flex-col gap-[16px]"
                 aria-label="Footer Navigation"
               >
-                {navLinks.map((link, idx) => (
+                {navLinks.map((link, _) => (
                   <a
                     key={link.label}
                     href={link.href}
