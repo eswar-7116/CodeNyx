@@ -32,7 +32,7 @@ const Navbar = () => {
             <span className="font-display font-black text-[28px] text-accent-primary tracking-tight">
               C
             </span>
-            <span className="font-display font-black text-[32px] font-bold text-accent-secondary tracking-tight">
+            <span className="font-display text-[32px] font-bold text-accent-secondary tracking-tight">
               .
             </span>
           </a>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-[48px]">
-          {["Home", "Highlights", "Timeline", "FAQs"].map((link) => (
+          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs"].map((link) => (
             <a
               key={link}
               href={`/#${link.toLowerCase()}`}
@@ -87,7 +87,7 @@ const Navbar = () => {
           className="md:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
           aria-label="Mobile Navigation"
         >
-          {["Home", "Highlights", "Timeline", "FAQs"].map((link) => (
+          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs"].map((link) => (
             <a
               key={link}
               href={`/#${link.toLowerCase()}`}

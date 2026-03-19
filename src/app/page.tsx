@@ -8,6 +8,7 @@ import CTA from "@/components/sections/CTA";
 import Community from "@/components/sections/Community";
 import FAQ from "@/components/sections/FAQ";
 import PacmanCodenyx from "@/components/animations/pacman/PacmanCodenyx";
+import Sponsors from "@/components/sections/Sponsors";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Prizes />
       <CTA />
       <Community />
+      <Sponsors />
       <FAQ />
       <PacmanCodenyx />
     </main>
