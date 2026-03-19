@@ -38,7 +38,7 @@ const Sponsors = () => {
           {/* Gifting Sponsor - Highlighted & Left */}
           <div className="group relative p-8 rounded-2xl bg-white/[0.06] border border-white/[0.2] hover:bg-white/[0.1] hover:border-white/[0.3] shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500 overflow-hidden flex flex-col items-center justify-center min-h-[250px]">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold text-white uppercase tracking-widest px-3 py-1 rounded-full border border-white/30 bg-white/10 whitespace-nowrap z-10">
+            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold text-[#EA4335] uppercase tracking-widest px-3 py-1 rounded-full border border-[#EA4335]/20 bg-[#EA4335]/5 whitespace-nowrap z-10">
               Gifting Sponsor
             </span>
             <img src="/potronics_logo.png" alt="Potronics" className="max-h-24 max-w-[80%] object-contain mt-6 opacity-100 transition-transform duration-500 group-hover:scale-110 z-10" />
@@ -47,7 +47,7 @@ const Sponsors = () => {
 
           {/* Platform Sponsor - Right */}
           <div className="group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.05] hover:border-white/[0.15] transition-all duration-500 overflow-hidden flex flex-col items-center justify-center min-h-[250px]">
-            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold text-[#EA4335] uppercase tracking-widest px-3 py-1 rounded-full border border-[#EA4335]/20 bg-[#EA4335]/5 whitespace-nowrap">
+            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold text-white uppercase tracking-widest px-3 py-1 rounded-full border border-white/30 bg-white/10 whitespace-nowrap">
               Platform Sponsor
             </span>
             <img src="/hackculture_logo.png" alt="Hackculture" className="max-h-24 max-w-[80%] object-contain mt-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
