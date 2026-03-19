@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import waIcon from "../assets/wa.svg";
 import discordIcon from "../assets/discord.svg";
+import { Users } from "lucide-react";
 
 const Community = () => {
   const containerVariants = {
@@ -59,8 +60,42 @@ const Community = () => {
 
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[800px] mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto"
         >
+          {/* GDG Community Card */}
+          <a
+            href="https://gdg.community.dev/gdg-on-campus-cvr-college-of-engineering-hyderabad-india/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.05] hover:border-white/[0.15] transition-all duration-500 overflow-hidden"
+            role="article"
+            aria-label="Join our GDG Community"
+          >
+            <div
+              className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-90 transition-opacity"
+              aria-hidden="true"
+            >
+              <Users className="w-20 h-20 text-[#EA4335]" />
+            </div>
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <div
+                className="w-16 h-16 rounded-full bg-[#EA4335]/10 border border-[#EA4335]/20 flex items-center justify-center text-[#EA4335] mb-6 group-hover:scale-110 transition-transform duration-500"
+                aria-hidden="true"
+              >
+                <Users className="w-8 h-8" />
+              </div>
+              <h3 className="font-display font-bold text-2xl mb-2">
+                GDG Platform
+              </h3>
+              <p className="font-body text-accent-primary/40 mb-6">
+                Join our official community platform for events and more.
+              </p>
+              <span className="font-mono text-sm font-bold text-accent-primary uppercase tracking-widest px-6 py-3 border border-white/10 rounded-lg group-hover:bg-white group-hover:text-black transition-all duration-300">
+                Join Community
+              </span>
+            </div>
+          </a>
+
           {/* WhatsApp Card */}
           <a
             href="https://chat.whatsapp.com/GJGqYeYJkmGIFDZvw7Zoeh"
