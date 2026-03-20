@@ -118,6 +118,28 @@ const Sponsors = () => {
               .xyz
             </h3>
           </a>
+
+          {/* Sponsor */}
+          <a
+            href="https://www.coca-cola.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-8 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.05] hover:border-white/[0.15] transition-all duration-500 overflow-hidden flex flex-col items-center justify-center min-h-[250px]"
+          >
+            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/30 bg-white/10 whitespace-nowrap z-10">
+              Sponsor
+            </span>
+            <div className="h-24 w-full flex items-center justify-center mt-6 z-10">
+              <img
+                src="/coca-cola.png"
+                alt="Coca Cola"
+                className="max-h-full max-w-[80%] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+            <h3 className="mt-4 font-display font-bold text-xl text-white/80 group-hover:text-white transition-colors z-10">
+              Coca Cola
+            </h3>
+          </a>
         </motion.div>
 
         <motion.div
