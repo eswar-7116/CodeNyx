@@ -34,10 +34,33 @@ const ProblemsPage = () => {
           <h1 className="font-display font-black text-[clamp(40px,6vw,72px)] text-accent-primary tracking-[-0.04em] leading-[1.1] mb-6">
             Problem Statements.
           </h1>
-          <p className="font-body text-[18px] text-accent-primary/60 max-w-[600px] leading-relaxed">
+          <p className="font-body text-[18px] text-accent-primary/60 max-w-[600px] leading-relaxed mb-10">
             Choose a challenge that resonates with you. These real-world
             problems are your starting point for the 36-hour build marathon.
           </p>
+
+          <a
+            href="/Codenyx_PPT_Round_Template.pptx"
+            download
+            className="inline-flex items-center gap-2 bg-accent-secondary text-bg-base hover:bg-opacity-90 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[28px] py-[14px] rounded-[4px] shadow-[0_0_20px_rgba(255,107,0,0.2)]"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="mr-1"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download PPT Template
+          </a>
         </motion.div>
 
         {/* Problems Grid */}
