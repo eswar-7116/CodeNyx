@@ -40,7 +40,7 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-[48px]">
-          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
+          {["Home", "Announcements", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
             (link) => (
               <a
                 key={link}
@@ -91,7 +91,7 @@ const Navbar = () => {
           className="md:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
           aria-label="Mobile Navigation"
         >
-          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
+          {["Home", "Announcements", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
             (link) => (
               <a
                 key={link}
