@@ -15,9 +15,9 @@ function App() {
   return (
     <main>
       <Hero />
+      <About />
       <Highlights />
       <Announcements />
-      <About />
       <Process />
       <Timeline />
       <Prizes />
