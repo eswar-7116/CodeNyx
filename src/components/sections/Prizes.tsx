@@ -87,8 +87,11 @@ const Prizes = () => {
             Winners for Each Problem Statement
           </h2>
 
-          <p className="font-body text-[18px] text-white/40 leading-[1.7] max-w-[500px] mx-auto">
+          <p className="font-body text-[18px] text-white/40 leading-[1.7] max-w-[500px] mx-auto mb-[24px]">
             Three challenges. Three teams. One stage.
+          </p>
+          <p className="font-mono text-[16px] font-bold tracking-[2px] text-accent-secondary">
+            TOTAL PRIZE POOL: ₹30,000
           </p>
         </motion.div>
 
@@ -170,9 +173,9 @@ const Prizes = () => {
               >
                 <span
                   className="font-mono text-[13px] tracking-[2px]"
-                  style={{ color: item.accent, opacity: 0.5 }}
+                  style={{ color: item.accent, opacity: 0.9, fontWeight: 'bold' }}
                 >
-                  PRIZE: TBA
+                  PRIZE: ₹10,000
                 </span>
               </div>
             </motion.div>

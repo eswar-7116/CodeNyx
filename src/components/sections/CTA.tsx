@@ -52,9 +52,9 @@ const CTA = () => {
           <div className="relative z-10 w-full flex flex-col items-center max-w-[700px]">
             {/* Status badge */}
             <div className="inline-flex items-center gap-[12px] bg-accent-secondary/10 border border-accent-secondary/20 rounded-full px-[16px] py-[8px] mb-[48px]">
-              <span className="w-[6px] h-[6px] rounded-full bg-accent-secondary animate-pulse" />
+              <span className="w-[6px] h-[6px] rounded-full bg-accent-secondary opacity-50" />
               <span className="font-mono text-[12px] text-accent-primary font-bold tracking-[2px]">
-                REGISTRATIONS: DSA ROUND OPEN
+                REGISTRATIONS: CLOSED (DSA ROUND COMPLETED)
               </span>
             </div>
             <h2
